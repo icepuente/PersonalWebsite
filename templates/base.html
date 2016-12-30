@@ -1,0 +1,20 @@
+<html>
+	<head>
+		{% block head %}
+		<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+		{% include "navbar.html" %}
+		<title>{% block title %}Alec Puente | Computer Systems Engineer{% endblock %}</title>
+		{% endblock %}
+	</head>
+
+	<body>
+	{% block body %}
+	{% endblock %}
+	</body>
+</html>
+
+{% block javascript %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+{% endblock %}

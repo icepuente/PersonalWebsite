@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="col-lg-1 col-offset-6 centered">
+	<h2>Contact</h2>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+			{% for category, message in messages %}
+				<div class="flash-{{ category }}">{{ message }}</div>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	
+	<form action=""	method="post">
+	
+		{{ form.hidden_tag() }}
+ 
+    	{{ form.name.label }}
+    	{{ form.name }}
+    	{{ form.email.label }}
+    	{{ form.email }}
+    	{{ form.subject.label }}
+    	{{ form.subject }}
+    	{{ form.message.label }}
+    	{{ form.message }}
+    	{{ form.submit }}
+    
+	</form>
+</div>
+
+{% endblock %}
